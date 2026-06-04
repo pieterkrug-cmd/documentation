@@ -460,7 +460,7 @@ button_card_templates:
         - justify-self: start
 
 title: Smart Home
-url_path: redesign
+url_path: claude-home-panel
 
 views:
 
@@ -532,52 +532,52 @@ views:
                 template: nav_active
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -730,7 +730,7 @@ views:
                 show_name: true
                 show_state: true
                 show_icon: true
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
                 state_display: "[[[ return entity.state === 'on' ? 'DING!' : 'CLEAR'; ]]]"
                 custom_fields:
                   cat: "SECURITY"
@@ -872,52 +872,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_active
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -1146,52 +1146,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_active
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -1428,52 +1428,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_active
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -1796,52 +1796,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_active
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -2028,52 +2028,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_active
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -2363,52 +2363,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_active
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -2608,52 +2608,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_active
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -2841,52 +2841,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_active
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_item
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
@@ -3097,52 +3097,52 @@ views:
                 template: nav_item
                 name: Home
                 icon: mdi:home-variant
-                tap_action: {action: navigate, navigation_path: /redesign/home}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/home}
               - type: custom:button-card
                 template: nav_item
                 name: Security
                 icon: mdi:shield-home
-                tap_action: {action: navigate, navigation_path: /redesign/security}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/security}
               - type: custom:button-card
                 template: nav_item
                 name: Energy
                 icon: mdi:solar-power-variant
-                tap_action: {action: navigate, navigation_path: /redesign/energy}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/energy}
               - type: custom:button-card
                 template: nav_item
                 name: Media
                 icon: mdi:television-play
-                tap_action: {action: navigate, navigation_path: /redesign/media}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/media}
               - type: custom:button-card
                 template: nav_item
                 name: Climate
                 icon: mdi:air-conditioner
-                tap_action: {action: navigate, navigation_path: /redesign/climate}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/climate}
               - type: custom:button-card
                 template: nav_item
                 name: Rooms
                 icon: mdi:floor-plan
-                tap_action: {action: navigate, navigation_path: /redesign/rooms}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/rooms}
               - type: custom:button-card
                 template: nav_item
                 name: Lights
                 icon: mdi:lightbulb-multiple
-                tap_action: {action: navigate, navigation_path: /redesign/lights}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/lights}
               - type: custom:button-card
                 template: nav_item
                 name: Garden
                 icon: mdi:sprinkler-variant
-                tap_action: {action: navigate, navigation_path: /redesign/garden}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garden}
               - type: custom:button-card
                 template: nav_item
                 name: Garage
                 icon: mdi:garage
-                tap_action: {action: navigate, navigation_path: /redesign/garage}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/garage}
               - type: custom:button-card
                 template: nav_active
                 name: Scenes
                 icon: mdi:palette
-                tap_action: {action: navigate, navigation_path: /redesign/scenes}
+                tap_action: {action: navigate, navigation_path: /claude-home-panel/scenes}
               - type: custom:button-card
                 show_name: false
                 show_state: false
