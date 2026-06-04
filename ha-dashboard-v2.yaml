@@ -30,7 +30,7 @@ button_card_templates:
         - background: |
             [[[
               const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
-              return on ? 'rgba(14,30,75,0.98)' : 'rgba(9,16,40,0.96)';
+              return on ? 'rgb(11,22,58)' : 'rgb(8,12,32)';
             ]]]
         - border-radius: 14px
         - border: |
@@ -133,8 +133,8 @@ button_card_templates:
       card:
         - background: |
             [[[
-              if (!entity) return 'rgba(9,16,40,0.96)';
-              return entity.state !== 'off' ? 'rgba(14,30,75,0.98)' : 'rgba(9,16,40,0.96)';
+              if (!entity) return 'rgb(8,12,32)';
+              return entity.state !== 'off' ? 'rgb(11,22,58)' : 'rgb(8,12,32)';
             ]]]
         - border-radius: 14px
         - border: |
@@ -213,7 +213,7 @@ button_card_templates:
       cat: "[[[ return variables.category ]]]"
     styles:
       card:
-        - background: "rgba(9,16,40,0.96)"
+        - background: "rgb(8,12,32)"
         - border-radius: 14px
         - border: "1px solid rgba(255,255,255,0.04)"
         - box-shadow: "inset 0 1px 0 rgba(255,255,255,0.025)"
@@ -272,7 +272,7 @@ button_card_templates:
       card:
         - background: |
             [[[
-              return (entity && entity.state === 'home') ? 'rgba(14,30,75,0.98)' : 'rgba(9,16,40,0.96)';
+              return (entity && entity.state === 'home') ? 'rgb(11,22,58)' : 'rgb(8,12,32)';
             ]]]
         - border: |
             [[[
@@ -339,7 +339,7 @@ button_card_templates:
       cat: "[[[ return variables.category ]]]"
     styles:
       card:
-        - background: "rgba(9,16,40,0.96)"
+        - background: "rgb(8,12,32)"
         - border-radius: 14px
         - border: "1px solid rgba(255,255,255,0.04)"
         - box-shadow: "inset 0 1px 0 rgba(255,255,255,0.025)"
@@ -470,7 +470,7 @@ views:
   - title: Home
     path: home
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -487,7 +487,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -630,7 +630,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -673,7 +673,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -736,7 +736,7 @@ views:
                   cat: "SECURITY"
                 styles:
                   card:
-                    - background: "rgba(10,18,48,0.95)"
+                    - background: "rgb(8,12,32)"
                     - border-radius: 12px
                     - border: "1px solid rgba(255,255,255,0.06)"
                     - box-shadow: none
@@ -810,7 +810,7 @@ views:
   - title: Security
     path: security
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -827,7 +827,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -973,7 +973,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1023,7 +1023,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -1038,7 +1038,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -1055,7 +1055,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -1070,7 +1070,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -1084,7 +1084,7 @@ views:
   - title: Energy
     path: energy
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -1101,7 +1101,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -1329,7 +1329,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1353,7 +1353,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1366,7 +1366,7 @@ views:
   - title: Media
     path: media
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -1383,7 +1383,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -1530,7 +1530,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1547,7 +1547,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1564,7 +1564,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1583,7 +1583,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1600,7 +1600,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1625,7 +1625,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -1649,7 +1649,7 @@ views:
                       cat: "VACUUM"
                     styles:
                       card:
-                        - background: "rgba(10,18,48,0.95)"
+                        - background: "rgb(8,12,32)"
                         - border-radius: 12px
                         - border: "1px solid rgba(255,255,255,0.06)"
                         - box-shadow: none
@@ -1696,7 +1696,7 @@ views:
                       cat: "VACUUM"
                     styles:
                       card:
-                        - background: "rgba(10,18,48,0.95)"
+                        - background: "rgb(8,12,32)"
                         - border-radius: 12px
                         - border: "1px solid rgba(255,255,255,0.06)"
                         - box-shadow: none
@@ -1734,7 +1734,7 @@ views:
   - title: Climate
     path: climate
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -1751,7 +1751,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -1925,7 +1925,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       box-shadow: none !important;
@@ -1966,7 +1966,7 @@ views:
   - title: Rooms
     path: rooms
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -1983,7 +1983,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -2240,7 +2240,7 @@ views:
                   cat: "STUDY"
                 styles:
                   card:
-                    - background: "rgba(10,18,48,0.95)"
+                    - background: "rgb(8,12,32)"
                     - border-radius: 12px
                     - border: "1px solid rgba(255,255,255,0.06)"
                     - box-shadow: none
@@ -2301,7 +2301,7 @@ views:
   - title: Lights
     path: lights
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -2318,7 +2318,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -2546,7 +2546,7 @@ views:
   - title: Garden
     path: garden
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -2563,7 +2563,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -2779,7 +2779,7 @@ views:
   - title: Garage
     path: garage
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -2796,7 +2796,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -2983,7 +2983,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -2998,7 +2998,7 @@ views:
                 card_mod:
                   style: |
                     ha-card {
-                      background: rgba(10,18,48,0.95) !important;
+                      background: rgb(8,12,32) !important;
                       border: 1px solid rgba(255,255,255,0.06) !important;
                       border-radius: 12px !important;
                       overflow: hidden;
@@ -3035,7 +3035,7 @@ views:
   - title: Scenes
     path: scenes
     panel: true
-    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
+    background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
@@ -3052,7 +3052,7 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(2,5,15,0.99) !important;
+                  background: rgb(3,5,14) !important;
                   border-radius: 0 !important;
                   border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
@@ -3264,7 +3264,7 @@ views:
                   cat: "ACTION"
                 styles:
                   card:
-                    - background: "rgba(10,18,48,0.95)"
+                    - background: "rgb(8,12,32)"
                     - border-radius: 12px
                     - border: "1px solid rgba(255,255,255,0.06)"
                     - box-shadow: none
@@ -3316,7 +3316,7 @@ views:
                   cat: "ACTION"
                 styles:
                   card:
-                    - background: "rgba(10,18,48,0.95)"
+                    - background: "rgb(8,12,32)"
                     - border-radius: 12px
                     - border: "1px solid rgba(255,255,255,0.06)"
                     - box-shadow: none
