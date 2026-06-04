@@ -20,30 +20,45 @@ button_card_templates:
       tog: |
         [[[
           const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
-          const c = on ? '#3b82f6' : 'rgba(255,255,255,0.15)';
-          const x = on ? '16px' : '2px';
-          return '<div style="width:36px;height:20px;border-radius:10px;background:' + c + ';display:flex;align-items:center;padding:0 2px;box-sizing:border-box;transition:background .3s"><div style="width:16px;height:16px;border-radius:50%;background:white;transform:translateX(' + x + ');transition:transform .25s;box-shadow:0 1px 3px rgba(0,0,0,.3)"></div></div>';
+          const bg = on ? '#3b82f6' : 'rgba(255,255,255,0.09)';
+          const x = on ? '19px' : '2px';
+          const ds = on ? '0 2px 8px rgba(59,130,246,0.6)' : '0 1px 4px rgba(0,0,0,0.5)';
+          return '<div style="width:40px;height:22px;border-radius:11px;background:' + bg + ';display:flex;align-items:center;padding:0 2px;box-sizing:border-box;transition:background .28s ease;flex-shrink:0"><div style="width:18px;height:18px;border-radius:50%;background:white;transform:translateX(' + x + ');transition:transform .24s cubic-bezier(0.4,0,0.2,1);box-shadow:' + ds + '"></div></div>';
         ]]]
     styles:
       card:
-        - background: "rgba(10,18,48,0.95)"
-        - border-radius: 12px
-        - border: "1px solid rgba(255,255,255,0.06)"
-        - box-shadow: none
-        - padding: 10px 12px 12px
+        - background: |
+            [[[
+              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
+              return on ? 'rgba(14,30,75,0.98)' : 'rgba(9,16,40,0.96)';
+            ]]]
+        - border-radius: 14px
+        - border: |
+            [[[
+              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
+              return on ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(255,255,255,0.04)';
+            ]]]
+        - box-shadow: |
+            [[[
+              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
+              return on ? '0 4px 20px rgba(59,130,246,0.13), inset 0 1px 0 rgba(255,255,255,0.05)' : 'inset 0 1px 0 rgba(255,255,255,0.025)';
+            ]]]
+        - transition: "background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease"
+        - padding: 9px 11px 11px
         - cursor: pointer
       grid:
         - grid-template-areas: '"cat cat tog" "i n s"'
         - grid-template-columns: auto 1fr auto
         - grid-template-rows: auto auto
-        - row-gap: 8px
+        - row-gap: 9px
         - column-gap: 6px
       custom_fields:
         cat:
-          - font-size: 0.52em
-          - opacity: "0.3"
+          - font-size: 0.47em
+          - font-weight: "700"
+          - opacity: "0.22"
           - text-transform: uppercase
-          - letter-spacing: 0.12em
+          - letter-spacing: 0.15em
           - color: white
           - align-self: center
           - justify-self: start
@@ -52,31 +67,36 @@ button_card_templates:
           - align-self: center
           - justify-self: end
       icon:
-        - width: 18px
+        - width: 16px
         - color: |
             [[[
               const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
-              return on ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)';
+              return on ? '#93c5fd' : 'rgba(255,255,255,0.18)';
             ]]]
       name:
-        - font-size: 0.78em
+        - font-size: 0.76em
         - font-weight: "500"
         - align-self: center
         - justify-self: start
-        - color: "rgba(255,255,255,0.85)"
-        - white-space: nowrap
-        - overflow: hidden
-        - text-overflow: ellipsis
-      state:
-        - font-size: 0.68em
-        - font-weight: "600"
-        - align-self: center
-        - justify-self: end
-        - letter-spacing: 0.05em
         - color: |
             [[[
               const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
-              return on ? 'rgba(147,197,253,0.9)' : 'rgba(255,255,255,0.2)';
+              return on ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.5)';
+            ]]]
+        - white-space: nowrap
+        - overflow: hidden
+        - text-overflow: ellipsis
+        - letter-spacing: "-0.01em"
+      state:
+        - font-size: 0.65em
+        - font-weight: "700"
+        - align-self: center
+        - justify-self: end
+        - letter-spacing: 0.07em
+        - color: |
+            [[[
+              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
+              return on ? 'rgba(147,197,253,0.95)' : 'rgba(255,255,255,0.18)';
             ]]]
 
   climate_card:
@@ -111,56 +131,75 @@ button_card_templates:
         ]]]
     styles:
       card:
-        - background: "rgba(10,18,48,0.95)"
-        - border-radius: 12px
-        - border: "1px solid rgba(255,255,255,0.06)"
-        - box-shadow: none
-        - padding: 10px 12px 12px
+        - background: |
+            [[[
+              if (!entity) return 'rgba(9,16,40,0.96)';
+              return entity.state !== 'off' ? 'rgba(14,30,75,0.98)' : 'rgba(9,16,40,0.96)';
+            ]]]
+        - border-radius: 14px
+        - border: |
+            [[[
+              if (!entity) return '1px solid rgba(255,255,255,0.04)';
+              return entity.state !== 'off' ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(255,255,255,0.04)';
+            ]]]
+        - box-shadow: |
+            [[[
+              if (!entity) return 'none';
+              return entity.state !== 'off' ? '0 4px 20px rgba(59,130,246,0.13), inset 0 1px 0 rgba(255,255,255,0.05)' : 'inset 0 1px 0 rgba(255,255,255,0.025)';
+            ]]]
+        - transition: "background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease"
+        - padding: 9px 11px 11px
         - cursor: pointer
       grid:
         - grid-template-areas: '"cat cat ctemp" "i n cmode"'
         - grid-template-columns: auto 1fr auto
         - grid-template-rows: auto auto
-        - row-gap: 8px
+        - row-gap: 9px
         - column-gap: 6px
       custom_fields:
         cat:
-          - font-size: 0.52em
-          - opacity: "0.3"
+          - font-size: 0.47em
+          - font-weight: "700"
+          - opacity: "0.22"
           - text-transform: uppercase
-          - letter-spacing: 0.12em
+          - letter-spacing: 0.15em
           - color: white
           - align-self: center
           - justify-self: start
         ctemp:
-          - font-size: 0.9em
+          - font-size: 0.88em
           - font-weight: "300"
-          - color: "#93c5fd"
+          - color: "rgba(255,255,255,0.85)"
           - align-self: center
           - justify-self: end
           - white-space: nowrap
+          - letter-spacing: "-0.02em"
         cmode:
-          - font-size: 0.68em
-          - font-weight: "600"
-          - letter-spacing: 0.05em
+          - font-size: 0.65em
+          - font-weight: "700"
+          - letter-spacing: 0.07em
           - align-self: center
           - justify-self: end
           - color: |
               [[[
-                return (entity && entity.state !== 'off') ? 'rgba(147,197,253,0.9)' : 'rgba(255,255,255,0.2)';
+                return (entity && entity.state !== 'off') ? 'rgba(147,197,253,0.95)' : 'rgba(255,255,255,0.18)';
               ]]]
       icon:
-        - width: 18px
+        - width: 16px
         - color: |
             [[[
-              return (entity && entity.state !== 'off') ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)';
+              return (entity && entity.state !== 'off') ? '#93c5fd' : 'rgba(255,255,255,0.18)';
             ]]]
       name:
-        - font-size: 0.78em
+        - font-size: 0.76em
         - font-weight: "500"
         - align-self: center
         - justify-self: start
-        - color: "rgba(255,255,255,0.85)"
+        - letter-spacing: "-0.01em"
+        - color: |
+            [[[
+              return (entity && entity.state !== 'off') ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.5)';
+            ]]]
 
   sensor_card:
     tap_action:
@@ -174,41 +213,48 @@ button_card_templates:
       cat: "[[[ return variables.category ]]]"
     styles:
       card:
-        - background: "rgba(10,18,48,0.95)"
-        - border-radius: 12px
-        - border: "1px solid rgba(255,255,255,0.06)"
-        - box-shadow: none
-        - padding: 10px 12px 12px
+        - background: "rgba(9,16,40,0.96)"
+        - border-radius: 14px
+        - border: "1px solid rgba(255,255,255,0.04)"
+        - box-shadow: "inset 0 1px 0 rgba(255,255,255,0.025)"
+        - padding: 9px 11px 11px
       grid:
         - grid-template-areas: '"cat cat ." "i n s"'
         - grid-template-columns: auto 1fr auto
         - grid-template-rows: auto auto
-        - row-gap: 8px
+        - row-gap: 9px
         - column-gap: 6px
       custom_fields:
         cat:
-          - font-size: 0.52em
-          - opacity: "0.3"
+          - font-size: 0.47em
+          - font-weight: "700"
+          - opacity: "0.22"
           - text-transform: uppercase
-          - letter-spacing: 0.12em
+          - letter-spacing: 0.15em
           - color: white
           - align-self: center
           - justify-self: start
       icon:
-        - width: 18px
-        - color: "rgba(255,255,255,0.6)"
+        - width: 16px
+        - color: "rgba(255,255,255,0.38)"
       name:
-        - font-size: 0.78em
+        - font-size: 0.76em
         - font-weight: "500"
         - align-self: center
         - justify-self: start
-        - color: "rgba(255,255,255,0.85)"
+        - color: "rgba(255,255,255,0.58)"
+        - letter-spacing: "-0.01em"
+        - white-space: nowrap
+        - overflow: hidden
+        - text-overflow: ellipsis
       state:
-        - font-size: 0.9em
+        - font-size: 0.92em
         - font-weight: "300"
         - align-self: center
         - justify-self: end
-        - color: "#93c5fd"
+        - color: "rgba(255,255,255,0.88)"
+        - letter-spacing: "-0.02em"
+        - white-space: nowrap
 
   presence_card:
     show_entity_picture: true
@@ -218,52 +264,67 @@ button_card_templates:
       action: more-info
     state_display: |
       [[[
-        return (entity && entity.state === 'home') ? 'ZUHAUSE' : 'UNTERWEGS';
+        return (entity && entity.state === 'home') ? 'ZUHAUSE' : 'WEG';
       ]]]
     custom_fields:
       cat: "PERSON"
     styles:
       card:
-        - background: "rgba(10,18,48,0.95)"
-        - border: "1px solid rgba(255,255,255,0.06)"
-        - border-radius: 12px
-        - box-shadow: none
-        - padding: 10px 12px 12px
+        - background: |
+            [[[
+              return (entity && entity.state === 'home') ? 'rgba(14,30,75,0.98)' : 'rgba(9,16,40,0.96)';
+            ]]]
+        - border: |
+            [[[
+              return (entity && entity.state === 'home') ? '1px solid rgba(59,130,246,0.3)' : '1px solid rgba(255,255,255,0.04)';
+            ]]]
+        - border-radius: 14px
+        - box-shadow: |
+            [[[
+              return (entity && entity.state === 'home') ? '0 4px 20px rgba(59,130,246,0.13)' : 'inset 0 1px 0 rgba(255,255,255,0.025)';
+            ]]]
+        - transition: "background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease"
+        - padding: 9px 11px 11px
       grid:
         - grid-template-areas: '"cat cat ." "i n s"'
         - grid-template-columns: auto 1fr auto
         - grid-template-rows: auto auto
-        - row-gap: 8px
+        - row-gap: 9px
         - column-gap: 6px
       custom_fields:
         cat:
-          - font-size: 0.52em
-          - opacity: "0.3"
+          - font-size: 0.47em
+          - font-weight: "700"
+          - opacity: "0.22"
           - text-transform: uppercase
-          - letter-spacing: 0.12em
+          - letter-spacing: 0.15em
           - color: white
           - align-self: center
           - justify-self: start
       entity_picture:
-        - width: 30px
-        - height: 30px
+        - width: 28px
+        - height: 28px
         - border-radius: 50%
-        - border: "2px solid rgba(255,255,255,0.2)"
+        - border: |
+            [[[
+              return (entity && entity.state === 'home') ? '2px solid rgba(147,197,253,0.7)' : '2px solid rgba(255,255,255,0.15)';
+            ]]]
       name:
-        - font-size: 0.78em
+        - font-size: 0.76em
         - font-weight: "500"
-        - color: "rgba(255,255,255,0.85)"
+        - color: "rgba(255,255,255,0.82)"
         - align-self: center
         - justify-self: start
+        - letter-spacing: "-0.01em"
       state:
         - font-size: 0.65em
-        - font-weight: "600"
-        - letter-spacing: 0.05em
+        - font-weight: "700"
+        - letter-spacing: 0.07em
         - align-self: center
         - justify-self: end
         - color: |
             [[[
-              return (entity && entity.state === 'home') ? 'rgba(147,197,253,0.9)' : 'rgba(255,100,100,0.7)';
+              return (entity && entity.state === 'home') ? 'rgba(147,197,253,0.95)' : 'rgba(255,100,100,0.65)';
             ]]]
 
   scene_card:
@@ -278,36 +339,38 @@ button_card_templates:
       cat: "[[[ return variables.category ]]]"
     styles:
       card:
-        - background: "rgba(10,18,48,0.95)"
-        - border-radius: 12px
-        - border: "1px solid rgba(255,255,255,0.06)"
-        - box-shadow: none
-        - padding: 10px 12px 12px
+        - background: "rgba(9,16,40,0.96)"
+        - border-radius: 14px
+        - border: "1px solid rgba(255,255,255,0.04)"
+        - box-shadow: "inset 0 1px 0 rgba(255,255,255,0.025)"
+        - padding: 9px 11px 11px
         - cursor: pointer
       grid:
         - grid-template-areas: '"cat cat ." "i n ."'
         - grid-template-columns: auto 1fr auto
         - grid-template-rows: auto auto
-        - row-gap: 8px
+        - row-gap: 9px
         - column-gap: 6px
       custom_fields:
         cat:
-          - font-size: 0.52em
-          - opacity: "0.3"
+          - font-size: 0.47em
+          - font-weight: "700"
+          - opacity: "0.22"
           - text-transform: uppercase
-          - letter-spacing: 0.12em
+          - letter-spacing: 0.15em
           - color: white
           - align-self: center
           - justify-self: start
       icon:
-        - width: 18px
-        - color: "rgba(255,255,255,0.7)"
+        - width: 16px
+        - color: "rgba(147,197,253,0.6)"
       name:
-        - font-size: 0.78em
+        - font-size: 0.76em
         - font-weight: "500"
         - align-self: center
         - justify-self: start
-        - color: "rgba(255,255,255,0.85)"
+        - color: "rgba(255,255,255,0.75)"
+        - letter-spacing: "-0.01em"
 
   nav_item:
     show_name: true
@@ -318,24 +381,25 @@ button_card_templates:
         - background: transparent
         - border: none
         - box-shadow: none
-        - padding: 5px 8px
-        - border-radius: 8px
+        - padding: 6px 10px
+        - border-radius: 7px
         - cursor: pointer
-        - margin: 1px 6px
+        - margin: 1px 5px
       grid:
         - grid-template-areas: '"i n"'
         - grid-template-columns: auto 1fr
         - column-gap: 7px
       icon:
         - width: 13px
-        - color: "rgba(255,255,255,0.35)"
+        - color: "rgba(255,255,255,0.26)"
       name:
-        - font-size: 0.62em
+        - font-size: 0.56em
         - font-weight: "600"
-        - letter-spacing: 0.08em
+        - letter-spacing: 0.1em
         - text-transform: uppercase
-        - color: "rgba(255,255,255,0.35)"
+        - color: "rgba(255,255,255,0.3)"
         - justify-self: start
+        - white-space: nowrap
 
   nav_active:
     show_name: true
@@ -343,27 +407,28 @@ button_card_templates:
     show_state: false
     styles:
       card:
-        - background: "rgba(59,130,246,0.2)"
-        - border: none
+        - background: "rgba(59,130,246,0.12)"
+        - border: "1px solid rgba(59,130,246,0.22)"
         - box-shadow: none
-        - padding: 5px 8px
-        - border-radius: 8px
+        - padding: 6px 10px
+        - border-radius: 7px
         - cursor: pointer
-        - margin: 1px 6px
+        - margin: 1px 5px
       grid:
         - grid-template-areas: '"i n"'
         - grid-template-columns: auto 1fr
         - column-gap: 7px
       icon:
         - width: 13px
-        - color: "rgb(147,197,253)"
+        - color: "#93c5fd"
       name:
-        - font-size: 0.62em
+        - font-size: 0.56em
         - font-weight: "700"
-        - letter-spacing: 0.08em
+        - letter-spacing: 0.1em
         - text-transform: uppercase
-        - color: "rgb(147,197,253)"
+        - color: "#93c5fd"
         - justify-self: start
+        - white-space: nowrap
 
   person_card:
     show_entity_picture: true
@@ -385,14 +450,17 @@ button_card_templates:
         - width: 26px
         - height: 26px
         - border-radius: 50%
-        - border: "2px solid rgba(255,255,255,0.2)"
+        - border: "2px solid rgba(255,255,255,0.18)"
       name:
-        - font-size: 0.6em
+        - font-size: 0.56em
         - font-weight: "600"
-        - letter-spacing: 0.06em
+        - letter-spacing: 0.07em
         - text-transform: uppercase
-        - color: "rgba(255,255,255,0.5)"
+        - color: "rgba(255,255,255,0.4)"
         - justify-self: start
+
+kiosk_mode:
+  hide_header: true
 
 title: Smart Home
 url_path: redesign
@@ -405,11 +473,12 @@ views:
   - title: Home
     path: home
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -421,9 +490,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -443,24 +512,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_active
                 name: Home
@@ -743,11 +813,12 @@ views:
   - title: Security
     path: security
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -759,9 +830,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -781,24 +852,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -1015,11 +1087,12 @@ views:
   - title: Energy
     path: energy
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -1031,9 +1104,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -1053,24 +1126,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -1295,11 +1369,12 @@ views:
   - title: Media
     path: media
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -1311,9 +1386,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -1333,24 +1408,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -1661,11 +1737,12 @@ views:
   - title: Climate
     path: climate
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -1677,9 +1754,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -1699,24 +1776,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -1891,11 +1969,12 @@ views:
   - title: Rooms
     path: rooms
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -1907,9 +1986,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -1929,24 +2008,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -2224,11 +2304,12 @@ views:
   - title: Lights
     path: lights
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -2240,9 +2321,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -2262,24 +2343,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -2467,11 +2549,12 @@ views:
   - title: Garden
     path: garden
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -2483,9 +2566,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -2505,24 +2588,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -2698,11 +2782,12 @@ views:
   - title: Garage
     path: garage
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -2714,9 +2799,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -2736,24 +2821,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
@@ -2952,11 +3038,12 @@ views:
   - title: Scenes
     path: scenes
     panel: true
+    background: "radial-gradient(ellipse at 12% 70%, rgba(59,130,246,0.06) 0%, transparent 55%), radial-gradient(ellipse at 88% 25%, rgba(99,102,241,0.04) 0%, transparent 45%)"
     cards:
       - type: custom:layout-card
         layout_type: custom:grid-layout
         layout:
-          grid-template-columns: 140px 1fr
+          grid-template-columns: 120px 1fr
           height: 100vh
           margin: 0
           padding: 0
@@ -2968,9 +3055,9 @@ views:
             card_mod:
               style: |
                 ha-card {
-                  background: rgba(4,8,24,0.99) !important;
+                  background: rgba(2,5,15,0.99) !important;
                   border-radius: 0 !important;
-                  border-right: 1px solid rgba(255,255,255,0.05) !important;
+                  border-right: 1px solid rgba(255,255,255,0.04) !important;
                   box-shadow: none !important;
                   min-height: 100vh;
                   overflow-y: auto;
@@ -2990,24 +3077,25 @@ views:
                     - background: transparent
                     - border: none
                     - box-shadow: none
-                    - padding: 14px 10px 6px
+                    - padding: 18px 10px 8px
                   grid:
                     - grid-template-areas: '"clk" "dt"'
                   custom_fields:
                     clk:
-                      - font-size: 2em
+                      - font-size: 2.3em
                       - font-weight: 200
-                      - letter-spacing: 3px
-                      - color: "#93c5fd"
+                      - letter-spacing: 1px
+                      - color: "rgba(255,255,255,0.92)"
                       - justify-self: start
                       - line-height: "1"
                     dt:
-                      - font-size: 0.5em
-                      - opacity: "0.35"
+                      - font-size: 0.48em
+                      - opacity: "0.28"
                       - color: white
                       - justify-self: start
-                      - letter-spacing: 0.06em
-                      - margin-top: 3px
+                      - letter-spacing: 0.1em
+                      - margin-top: 5px
+                      - font-weight: "600"
               - type: custom:button-card
                 template: nav_item
                 name: Home
