@@ -459,9 +459,6 @@ button_card_templates:
         - color: "rgba(255,255,255,0.4)"
         - justify-self: start
 
-kiosk_mode:
-  hide_header: true
-
 title: Smart Home
 url_path: redesign
 
