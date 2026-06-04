@@ -10,19 +10,19 @@ button_card_templates:
     show_icon: true
     variables:
       category: ""
-    state_display: >
+    state_display: |
       [[[
-        const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity.state);
+        const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
         return on ? 'AN' : 'AUS';
       ]]]
     custom_fields:
       cat: "[[[ return variables.category ]]]"
-      tog: >
+      tog: |
         [[[
-          const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity.state);
+          const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
           const c = on ? '#3b82f6' : 'rgba(255,255,255,0.15)';
           const x = on ? '16px' : '2px';
-          return `<div style="width:36px;height:20px;border-radius:10px;background:${c};display:flex;align-items:center;padding:0 2px;box-sizing:border-box;transition:background .3s"><div style="width:16px;height:16px;border-radius:50%;background:white;transform:translateX(${x});transition:transform .25s;box-shadow:0 1px 3px rgba(0,0,0,.3)"></div></div>`;
+          return '<div style="width:36px;height:20px;border-radius:10px;background:' + c + ';display:flex;align-items:center;padding:0 2px;box-sizing:border-box;transition:background .3s"><div style="width:16px;height:16px;border-radius:50%;background:white;transform:translateX(' + x + ');transition:transform .25s;box-shadow:0 1px 3px rgba(0,0,0,.3)"></div></div>';
         ]]]
     styles:
       card:
@@ -53,9 +53,9 @@ button_card_templates:
           - justify-self: end
       icon:
         - width: 18px
-        - color: >
+        - color: |
             [[[
-              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity.state);
+              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
               return on ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)';
             ]]]
       name:
@@ -73,9 +73,9 @@ button_card_templates:
         - align-self: center
         - justify-self: end
         - letter-spacing: 0.05em
-        - color: >
+        - color: |
             [[[
-              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity.state);
+              const on = ['on','open','opening','heating','cooling','fan_only','cleaning','returning','active'].includes(entity && entity.state);
               return on ? 'rgba(147,197,253,0.9)' : 'rgba(255,255,255,0.2)';
             ]]]
 
@@ -89,16 +89,18 @@ button_card_templates:
       category: ""
     custom_fields:
       cat: "[[[ return variables.category ]]]"
-      ctemp: >
+      ctemp: |
         [[[
+          if (!entity) return '--';
           const c = entity.attributes.current_temperature;
           const s = entity.attributes.temperature;
-          if (c !== undefined && s !== undefined) return `${c}° / ${s}°`;
-          if (c !== undefined) return `${c}°`;
+          if (c !== undefined && s !== undefined) return c + '° / ' + s + '°';
+          if (c !== undefined) return c + '°';
           return '--';
         ]]]
-      cmode: >
+      cmode: |
         [[[
+          if (!entity) return 'AUS';
           const m = entity.state;
           if (m === 'heat') return 'HEIZEN';
           if (m === 'cool') return 'KÜHLEN';
@@ -143,15 +145,15 @@ button_card_templates:
           - letter-spacing: 0.05em
           - align-self: center
           - justify-self: end
-          - color: >
+          - color: |
               [[[
-                return entity.state !== 'off' ? 'rgba(147,197,253,0.9)' : 'rgba(255,255,255,0.2)';
+                return (entity && entity.state !== 'off') ? 'rgba(147,197,253,0.9)' : 'rgba(255,255,255,0.2)';
               ]]]
       icon:
         - width: 18px
-        - color: >
+        - color: |
             [[[
-              return entity.state !== 'off' ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)';
+              return (entity && entity.state !== 'off') ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.25)';
             ]]]
       name:
         - font-size: 0.78em
@@ -214,9 +216,9 @@ button_card_templates:
     show_state: true
     tap_action:
       action: more-info
-    state_display: >
+    state_display: |
       [[[
-        return entity.state === 'home' ? 'ZUHAUSE' : 'UNTERWEGS';
+        return (entity && entity.state === 'home') ? 'ZUHAUSE' : 'UNTERWEGS';
       ]]]
     custom_fields:
       cat: "PERSON"
@@ -259,9 +261,9 @@ button_card_templates:
         - letter-spacing: 0.05em
         - align-self: center
         - justify-self: end
-        - color: >
+        - color: |
             [[[
-              return entity.state === 'home' ? 'rgba(147,197,253,0.9)' : 'rgba(255,100,100,0.7)';
+              return (entity && entity.state === 'home') ? 'rgba(147,197,253,0.9)' : 'rgba(255,100,100,0.7)';
             ]]]
 
   scene_card:
@@ -1860,10 +1862,11 @@ views:
                 entity: climate.aqua_temp
                 name: Pool Water Temp
                 icon: mdi:thermometer-water
-                state_display: >
+                state_display: |
                   [[[
+                    if (!entity) return '--';
                     const t = entity.attributes.current_temperature;
-                    return t !== undefined ? `${t} °C` : '--';
+                    return t !== undefined ? t + ' °C' : '--';
                   ]]]
                 variables:
                   category: POOL
@@ -1872,10 +1875,11 @@ views:
                 entity: climate.aqua_temp
                 name: Pool Set Point
                 icon: mdi:target
-                state_display: >
+                state_display: |
                   [[[
+                    if (!entity) return '--';
                     const t = entity.attributes.temperature;
-                    return t !== undefined ? `${t} °C` : '--';
+                    return t !== undefined ? t + ' °C' : '--';
                   ]]]
                 variables:
                   category: POOL
@@ -2678,10 +2682,11 @@ views:
                 entity: climate.aqua_temp
                 name: Pool Temp
                 icon: mdi:thermometer-water
-                state_display: >
+                state_display: |
                   [[[
+                    if (!entity) return '--';
                     const t = entity.attributes.current_temperature;
-                    return t !== undefined ? `${t} °C` : '--';
+                    return t !== undefined ? t + ' °C' : '--';
                   ]]]
                 variables:
                   category: POOL
