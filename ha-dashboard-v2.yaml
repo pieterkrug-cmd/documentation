@@ -473,6 +473,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -611,6 +614,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -813,6 +819,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -951,6 +960,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -1087,6 +1099,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -1225,6 +1240,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -1369,6 +1387,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -1507,6 +1528,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -1737,6 +1761,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -1875,6 +1902,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -1969,6 +1999,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -2107,6 +2140,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -2304,6 +2340,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -2442,6 +2481,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -2549,6 +2591,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -2687,6 +2732,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -2782,6 +2830,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -2920,6 +2971,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
@@ -3038,6 +3092,9 @@ views:
     background: "rgb(4,7,20)"
     cards:
       - type: custom:layout-card
+        card_mod:
+          style: |
+            ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
         layout_type: custom:grid-layout
         layout:
           grid-template-columns: 120px 1fr
@@ -3176,6 +3233,9 @@ views:
 
           # ── CONTENT ───────────────────────────
           - type: custom:layout-card
+            card_mod:
+              style: |
+                ha-card { background: rgb(4,7,20) !important; border: none !important; box-shadow: none !important; }
             layout_type: custom:grid-layout
             layout:
               grid-template-columns: repeat(3, 1fr)
