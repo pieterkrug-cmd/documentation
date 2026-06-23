@@ -1,0 +1,11 @@
+alias: "SwitchBot Toggle On at 4:00 AM"
+description: "Press SwitchBot Bot at 4:00 AM daily to toggle on"
+trigger:
+  - platform: time
+    at: "04:00:00"
+condition: []
+action:
+  - service: button.press
+    target:
+      entity_id: button.bot_36
+mode: single
