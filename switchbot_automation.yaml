@@ -1,24 +1,24 @@
 automation:
   - alias: "SwitchBot Toggle On at 4:00 AM"
-    description: "Turn on SwitchBot device at 4:00 AM daily"
+    description: "Press SwitchBot Bot at 4:00 AM daily to toggle on"
     trigger:
       - platform: time
         at: "04:00:00"
     condition: []
     action:
-      - service: switch.turn_on
+      - service: button.press
         target:
-          entity_id: switch.switchbot_device
+          entity_id: button.bot_36
     mode: single
 
   - alias: "SwitchBot Toggle Off at 7:00 AM"
-    description: "Turn off SwitchBot device at 7:00 AM daily"
+    description: "Press SwitchBot Bot at 7:00 AM daily to toggle off"
     trigger:
       - platform: time
         at: "07:00:00"
     condition: []
     action:
-      - service: switch.turn_off
+      - service: button.press
         target:
-          entity_id: switch.switchbot_device
+          entity_id: button.bot_36
     mode: single
